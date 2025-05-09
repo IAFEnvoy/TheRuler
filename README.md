@@ -6,7 +6,7 @@ Fell free to use this mod in your modpack.
 
 For example, you want to force set `doDaylightCycle` to `false`
 
-1.Open file `.minecraft/config/global_game_rule.json`. If this file is not existed, create it.
+1.Open file `.minecraft/config/the_ruler.json`. If this file is not existed, create it.
 
 2.Write the following contents:
 
