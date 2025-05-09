@@ -1,15 +1,16 @@
-package com.iafenvoy.ruler.forge;
+package com.iafenvoy.ruler.neoforge;
 
 import com.iafenvoy.ruler.GameRuleConfig;
 import com.iafenvoy.ruler.TheRuler;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
 
 @Mod(TheRuler.MOD_ID)
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
-public final class TheRulerForge {
-    public TheRulerForge() {
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.GAME)
+public final class TheRulerNeoForge {
+    public TheRulerNeoForge() {
         // Run our common setup.
     }
 
