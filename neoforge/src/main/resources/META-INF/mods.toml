@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[47,)"
+loaderVersion = "[2,)"
 issueTrackerURL = "https://github.com/IAFEnvoy/TheRuler/issues"
 license = "LGPL-3.0"
 
@@ -14,15 +14,18 @@ Set force game rules for all worlds.
 logoFile = "logo.png"
 
 [[dependencies.the_ruler]]
-modId = "forge"
-mandatory = true
-versionRange = "[47,)"
+modId = "neoforge"
+type = "required"
+versionRange = "[2,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.the_ruler]]
 modId = "minecraft"
-mandatory = true
+type = "required"
 versionRange = "[1.20.1,1.20.5)"
 ordering = "NONE"
 side = "BOTH"
+
+[[mixins]]
+config = "the_ruler.mixins.json"

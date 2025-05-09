@@ -2,9 +2,9 @@ package com.iafenvoy.ruler.forge;
 
 import com.iafenvoy.ruler.GameRuleConfig;
 import com.iafenvoy.ruler.TheRuler;
-import net.minecraftforge.event.AddReloadListenerEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.event.AddReloadListenerEvent;
 
 @Mod(TheRuler.MOD_ID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
