@@ -14,7 +14,7 @@ public final class TheRulerForge {
     }
 
     @SubscribeEvent
-    private static void onReload(AddReloadListenerEvent event) {
+    public static void onReload(AddReloadListenerEvent event) {
         event.addListener(GameRuleConfig.INSTANCE);
     }
 }

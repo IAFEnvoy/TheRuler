@@ -3,16 +3,17 @@ package com.iafenvoy.ruler.mixin;
 import com.google.gson.JsonPrimitive;
 import com.iafenvoy.ruler.GameRuleConfig;
 import com.iafenvoy.ruler.TheRuler;
-import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.world.GameRules;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(GameRules.class)
 public class GameRulesMixin {
-    @ModifyReturnValue(method = "get", at = @At("RETURN"))
-    private <T extends GameRules.Rule<T>> T modifyGameRule(T original, @Local(name = "key") GameRules.Key<T> key) {
+    @Inject(method = "get", at = @At("TAIL"))
+    private <T extends GameRules.Rule<T>> void modifyGameRule(GameRules.Key<T> key, CallbackInfoReturnable<T> cir) {
+        T original = cir.getReturnValue();
         JsonPrimitive primitive = GameRuleConfig.INSTANCE.getData(key.getName());
         if (primitive != null)
             try {
@@ -20,6 +21,5 @@ public class GameRulesMixin {
             } catch (Exception e) {
                 TheRuler.LOGGER.error("Fail to set game rule {}", key.getName(), e);
             }
-        return original;
     }
 }
