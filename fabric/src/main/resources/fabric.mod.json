@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "the_ruler",
+  "version": "${version}",
+  "name": "The Ruler",
+  "description": "Set force game rules for all worlds.",
+  "authors": [
+    "IAFEnvoy"
+  ],
+  "contact": {
+    "repo": "https://github.com/IAFEnvoy/TheRuler"
+  },
+  "license": "LGPL-3.0",
+  "icon": "logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.iafenvoy.ruler.fabric.TheRulerFabric"
+    ]
+  },
+  "mixins": [
+    "the_ruler.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "1.20.x"
+  }
+}
