@@ -17,7 +17,7 @@ public class GameRulesMixin {
         JsonPrimitive primitive = GameRuleConfig.INSTANCE.getData(key.getName());
         if (primitive != null)
             try {
-                ((GameRules$RuleAccessor) original).deserialize(primitive.getAsString());
+                ((GameRules$RuleAccessor) original).the_ruler$deserialize(primitive.getAsString());
             } catch (Exception e) {
                 TheRuler.LOGGER.error("Fail to set game rule {}", key.getName(), e);
             }
